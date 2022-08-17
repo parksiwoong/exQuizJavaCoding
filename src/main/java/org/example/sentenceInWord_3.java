@@ -19,9 +19,12 @@ public class sentenceInWord_3 {
         String answer = "";
         int m = Integer.MIN_VALUE; //가장 작은값으로 초기화
         String[] s = str.split(" ");
-        for(String x : s){ // s라는 배열에 ..
+        for(String x : s){ // s라는 배열에 x배열순번 순차적으로 [0] [1] [2]..
             int len=x.length(); // 길이 구하고
-            if(len>m)
+            if(len>m){
+                m = len ;
+                answer = x ;
+            }
             //System.out.println(x);
         }
 
