@@ -17,8 +17,9 @@ import java.util.Scanner;
 public class sentenceInWord_3 {
     public String solution(String str){
         String answer = "";
-        int m = Integer.MIN_VALUE; //가장 작은값으로 초기화
-        String[] s = str.split(" ");
+        int m = Integer.MIN_VALUE, pos; //가장 작은값으로 초기화
+        /** split */
+        /*String[] s = str.split(" ");
         for(String x : s){ // s라는 배열에 x배열순번 순차적으로 [0] [1] [2]..
             int len=x.length(); // 길이 구하고
             if(len>m){
@@ -26,10 +27,24 @@ public class sentenceInWord_3 {
                 answer = x ;
             }
             //System.out.println(x);
+            }
+            return answer
+        } */
+
+        /** 인덱스 어브 ,서브스트링 */
+        while ((pos = str.indexOf(' ')) != -1) {
+            String tmp = str.substring(0, pos); // 0부터 pos 까지 (서브스트링의 범위지정)
+            int len = tmp.length();
+            if (len > m) {
+                m = len;
+                answer = tmp;
+            }
+            str= str.substring(pos+1);
+        }
+        if(str.length()>m) answer = str;
+            return answer;
         }
 
-        return answer;
-    }
 
     public static void main(String[] args){
         sentenceInWord_3 T = new sentenceInWord_3();
