@@ -16,14 +16,31 @@ import java.util.Scanner;
 public class ToCharArray_5 {
 
     //바꾸는 메서드
-    public ArrayList<String> cg (){
+    public String cg (String str){
+        String answer;
+        char[] s = str.toCharArray();
+        int lt = 0 , rt= str.length()-1;
 
-        return null;
+        while(lt < rt){
+            if(!Character.isAlphabetic(s[lt])) lt++;
+            else if(!Character.isAlphabetic(s[rt])) rt--;
+            else{
+                char tmp=s[lt];
+                s[lt]= s[rt];
+                s[rt]=tmp;
+                lt++;
+                rt--;
+            }
+        }
+        answer = String.valueOf(s);
+        return answer;
     };
 
     public static void main(String[] args) {
         ToCharArray_5 T = new ToCharArray_5();
         Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(T.cg(str));
         // sc.nextInt();
     }
 }
