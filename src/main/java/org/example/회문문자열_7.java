@@ -18,12 +18,20 @@ public class 회문문자열_7 {
 
     public String solution(String obj) {
         String answer = "YES"; //YES NO 반환
-        obj= obj.toUpperCase();
+        //1번째 방법
+   /*     obj= obj.toUpperCase();
         int len = obj.length();
         for (int i = 0; i < len / 2; i++) {
             if(obj.charAt(i) != obj.charAt(len)){
                 answer = "NO";
             }
+        }*/
+
+        //2번째 방법
+        String tmp = new StringBuilder(obj).reverse().toString(); //뒤집기
+        if(obj.equalsIgnoreCase(tmp)) //tmp 뒤집은거랑 obj랑 같냐 equals 뒤에 IgnoreCase 함수 붙으면 대소문자 구분 없이 해줌
+        {
+            answer  = "YES";
         }
         return answer;
     }
