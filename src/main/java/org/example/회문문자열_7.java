@@ -16,18 +16,21 @@ import java.util.Scanner;
 
 public class 회문문자열_7 {
 
-    public String solution(String[] obj){
-
-        for(int i=0; i<obj.length;i++ ){
-
+    public String solution(String obj) {
+        String answer = "YES"; //YES NO 반환
+        obj= obj.toUpperCase();
+        int len = obj.length();
+        for (int i = 0; i < len / 2; i++) {
+            if(obj.charAt(i) != obj.charAt(len)){
+                answer = "NO";
+            }
         }
-        return 반환;
+        return answer;
     }
-
     public static void main(String[] args) {
         회문문자열_7 T = new 회문문자열_7();
         Scanner sc = new Scanner(System.in);
-        sc.next();
+        String obj = sc.next();
         System.out.println(T.solution(obj));
     }
 }
