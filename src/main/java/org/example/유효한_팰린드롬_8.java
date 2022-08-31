@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /** 8. 유요한 팰린드롬
  *
  *
@@ -11,7 +14,20 @@ package org.example;
  * */
 public class 유효한_팰린드롬_8 {
 
-    public static void main(String[] args) {
+    public String solution(String s){
+        String answer = "NO";
+        s = s.toUpperCase().replaceAll("[^A-Z]","");
+        String tmp = new StringBuilder(s).reverse().toString();
+        if(s.equals((tmp))) answer="YES";
+        System.out.println(s);
 
+    return answer;
+    }
+
+    public static void main(String[] args) {
+        유효한_팰린드롬_8 T = new 유효한_팰린드롬_8();
+        Scanner kb = new Scanner(System.in);
+        String str = kb.nextLine();
+        System.out.println(T.solution(str));
     }
 }
