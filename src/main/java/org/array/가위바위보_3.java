@@ -46,6 +46,7 @@ public class 가위바위보_3 {
         for(int i=0; i<n; i++){
             b[i] = kb.nextInt();
         }
-        System.out.println(T.solution(n, a, b));
+        //System.out.println(T.solution(n, a, b));
+        for(char x : T.solution(n,a,b).toCharArray()) System.out.println(x);
     }
 }
